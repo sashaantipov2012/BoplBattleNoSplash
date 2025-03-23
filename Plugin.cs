@@ -3,15 +3,16 @@ using HarmonyLib;
 using UnityEngine;
 using System;
 
-namespace FallDamage
+namespace NoSplash
 {
     [BepInPlugin("com.SashaAnt.NoBoplSplash", "NoBoplSplash", "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
         {
-            Logger.LogInfo("NoSplash loaded!");
-            new Harmony("NoSplash").PatchAll(typeof(Patches));
+            Logger.LogInfo("NoBoplSplash loaded!");
+            new Harmony("NoBoplSplash").PatchAll(typeof(Patches));
+            CharacterSelectHandler_online.clientSideMods_you_can_increment_this_to_enable_matchmaking_for_your_mods__please_dont_use_it_to_cheat_thats_really_cringe_especially_if_its_desyncing_others___you_didnt_even_win_on_your_opponents_screen___I_cannot_imagine_a_sadder_existence += 1;
         }
     }
 
